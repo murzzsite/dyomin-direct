@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Павел Демин: Яндекс Директ, карты, лендинги</title>
+<meta name="description" content="Настройка Яндекс Директа от заявки, а не от бюджета. Продвижение на картах и лендинги под рекламу. Павел Демин, маркетолог по платному трафику с 2012 года.">
+<meta name="theme-color" content="#d4202f">
+<meta property="og:title" content="Павел Демин: Яндекс Директ от заявки, а не от бюджета">
+<meta property="og:description" content="Считаем назад: от нужных клиентов к заявкам и бюджету. Директ, карты, лендинги.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23d4202f'/%3E%3Cpath d='M26 16H8m7-8-8 8 8 8' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.__dd)document.documentElement.classList.remove("js")},5000)</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header__inner">
+    <a class="logo" href="#top" aria-label="Павел Демин, наверх">Павел Демин</a>
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="#cases">Кейсы</a>
+      <a href="#pricing">Цены</a>
+      <a href="#faq">Вопросы</a>
+      <a href="tel:+79312500688" class="nav__phone">8 (931) 250-06-88</a>
+    </nav>
+    <a class="btn btn--sm header__cta" href="#lead"><span class="hide-sm">Разбор за 30 минут</span><span class="show-sm">Разбор</span></a>
+    <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav"><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero f-carmine" id="top" data-field="carmine">
+  <h1 class="hero__title" aria-label="Директ от заявки">
+    <span class="hl hl--1"><span class="split" aria-hidden="true">Директ</span></span>
+    <span class="hl hl--2"><span class="split" aria-hidden="true">от заявки</span></span>
+  </h1>
+  <div class="hero__foot">
+    <p class="hero__meta">Пн–Сб, 10–21<br><a href="tel:+79312500688">8 (931) 250-06-88</a></p>
+    <div class="hero__sell">
+      <p>Настраиваю Яндекс Директ, продвигаю на картах и делаю лендинги под рекламу. Сначала считаем, сколько нужно заявок, потом сколько на это потратить.</p>
+      <a class="btn" href="#calc">Посчитать заявки</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULATOR (live thing) ============ -->
+<section class="calc f-paper" id="calc" data-field="paper">
+  <div class="wrap calc__grid">
+    <div class="calc__intro">
+      <h2 class="h2" data-r="line">Считаем назад</h2>
+      <p class="lead" data-r>Двигайте ползунки: от нужного числа клиентов к заявкам и бюджету. Это ориентир, точную цифру покажет разбор вашей ниши.</p>
+    </div>
+
+    <form class="calc__controls" id="calcForm" onsubmit="return false" data-r>
+      <div class="ctl">
+        <div class="ctl__top"><label for="cClients">Клиентов нужно в месяц</label><output id="oClients" for="cClients">20</output></div>
+        <div class="range"><div class="range__fill" aria-hidden="true"></div><input id="cClients" type="range" min="5" max="100" step="1" value="20"></div>
+      </div>
+      <div class="ctl">
+        <div class="ctl__top"><label for="cConv">Заявок, которые становятся клиентами</label><output id="oConv" for="cConv">15%</output></div>
+        <div class="range"><div class="range__fill" aria-hidden="true"></div><input id="cConv" type="range" min="5" max="50" step="1" value="15"></div>
+        <p class="ctl__hint">Ваши менеджеры знают эту цифру. Если нет, 10–20% нормальный ориентир.</p>
+      </div>
+      <div class="ctl">
+        <div class="ctl__top"><label for="cCpl">Цена одной заявки</label><output id="oCpl" for="cCpl">500 ₽</output></div>
+        <div class="range"><div class="range__fill" aria-hidden="true"></div><input id="cCpl" type="range" min="300" max="1500" step="50" value="500"></div>
+        <p class="ctl__hint">В моих кейсах заявка стоила от 388 до 950 ₽, в зависимости от ниши.</p>
+      </div>
+    </form>
+
+    <div class="calc__result" aria-live="polite">
+      <p class="result__big"><span id="rBudget">67 000</span><span class="result__cur"> ₽</span></p>
+      <p class="result__cap">рекламный бюджет в месяц, без моей работы</p>
+      <p class="result__sentence">Чтобы получать <b id="sClients">20</b> клиентов в месяц, нужно около <b id="sLeads">134</b> заявок по <b id="sCpl">500</b> ₽. Это <b id="sDay">4,5</b> заявки в день.</p>
+      <a class="btn" href="#lead" id="calcCta">Проверить на моей нише</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE (real figures) ============ -->
+<div class="marquee f-carmine" aria-hidden="true" data-field="carmine">
+  <div class="marquee__track" id="marquee">
+    <span>129 заявок по 388 ₽</span><span>509 заявок по 500 ₽</span><span>95 заявок по 950 ₽</span><span>80 заявок по 435 ₽</span><span>148 заявок по 582 ₽</span>
+  </div>
+</div>
+
+<!-- ============ PAINS ============ -->
+<section class="pains f-pink" id="pains" data-field="pink">
+  <div class="wrap">
+    <h2 class="h2" data-r="line">Узнаёте себя?</h2>
+    <p class="lead pains__lead" data-r>Если совпало хотя бы два пункта, вы по адресу.</p>
+    <ul class="pains__list">
+      <li class="pain"><span class="pain__t">Заявок мало, и они дорогие</span></li>
+      <li class="pain"><span class="pain__t">Из десяти заявок толк от двух</span></li>
+      <li class="pain"><span class="pain__t">Не знаете: прибыль или убыток</span></li>
+      <li class="pain"><span class="pain__t">Цех простаивает на <span class="nb">40–60%</span></span></li>
+      <li class="pain"><span class="pain__t">Некогда нанимать и расти</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ NICHES (names as one sentence) ============ -->
+<section class="niches f-paper" id="niches" data-field="paper">
+  <div class="wrap">
+    <h2 class="h2 niches__h" data-r="line">85 ниш с 2012 года</h2>
+    <p class="niches__p" id="nichesP" data-r>Запускал рекламу для <span class="n">шкафов-купе</span>, <span class="n">аренды авто</span>, <span class="n">строительства домов</span>, <span class="n">детейлинга</span>, <span class="n">авторских йога-туров</span>, <span class="n">дронов и электроники</span>, <span class="n">авто из Кореи и Китая</span>, <span class="n">снабжения баров и ресторанов</span>.</p>
+  </div>
+</section>
+
+<!-- ============ CASES (ledger + peek) ============ -->
+<section class="cases f-tone" id="cases" data-field="tone">
+  <div class="wrap cases__grid">
+    <div class="cases__head">
+      <h2 class="h2" data-r="line">Результаты</h2>
+      <p class="lead" data-r>Крупные проекты и первый месяц работы с Директом. Наведите на строку, чтобы увидеть подробности.</p>
+    </div>
+
+    <div class="ledger" id="ledger">
+      <aside class="peek" id="peek" aria-hidden="true">
+        <p class="peek__big" id="peekBig">3 542 заявки</p>
+        <p class="peek__txt" id="peekTxt">в месяц на авто под заказ из Кореи и Китая</p>
+      </aside>
+
+      <h3 class="ledger__g">Крупные проекты</h3>
+      <ul class="ledger__rows" data-stagger>
+        <li class="row" tabindex="0" data-r data-big="3 542 заявки" data-txt="в месяц на авто под заказ из Кореи и Китая. Стратегия, Яндекс Директ, оптимизация по RoiStat.">
+          <span class="row__n">Авто из Кореи и Китая</span><span class="row__k">Директ, RoiStat</span><span class="row__r">3 542 заявки в месяц</span>
+        </li>
+        <li class="row" tabindex="0" data-r data-big="148 заявок по 582 ₽" data-txt="в месяц на авторские йога-туры. 16 млн ₽ выручки за сезон с мая по октябрь. Лендинг, Директ, SEO, VK, УТП и отдел продаж.">
+          <span class="row__n">Авторские йога-туры</span><span class="row__k">Директ, лендинг, SEO, VK</span><span class="row__r">148 заявок по 582 ₽</span>
+        </li>
+        <li class="row" tabindex="0" data-r data-big="588 заказов" data-txt="в месяц на дроны и электронику. Стратегия продвижения и Яндекс Директ.">
+          <span class="row__n">Дроны и электроника</span><span class="row__k">Директ</span><span class="row__r">588 заказов в месяц</span>
+        </li>
+        <li class="row" tabindex="0" data-r data-big="Трафик в 2,84 раза" data-txt="вырос у поставщика для баров и ресторанов. Директ, SEO, Авито, VK и доработки сайта.">
+          <span class="row__n">Снабжение баров и ресторанов</span><span class="row__k">Директ, SEO, Авито, VK</span><span class="row__r">трафик ×2,84</span>
+        </li>
+      </ul>
+
+      <h3 class="ledger__g">Первый месяц с Директом</h3>
+      <ul class="ledger__rows" data-stagger>
+        <li class="row" tabindex="0" data-r data-big="129 заявок" data-txt="за первый месяц. В рекламу вложено 50 050 ₽, заявка вышла по 388 ₽.">
+          <span class="row__n">Шкафы-купе</span><span class="row__k">50 050 ₽ в рекламу</span><span class="row__r">129 заявок по 388 ₽</span>
+        </li>
+        <li class="row" tabindex="0" data-r data-big="509 заявок" data-txt="за первый месяц. В рекламу вложено 254 500 ₽, заявка вышла по 500 ₽.">
+          <span class="row__n">Аренда авто, Москва и МО</span><span class="row__k">254 500 ₽ в рекламу</span><span class="row__r">509 заявок по 500 ₽</span>
+        </li>
+        <li class="row" tabindex="0" data-r data-big="95 заявок" data-txt="за первый месяц. В рекламу вложено 90 250 ₽, заявка вышла по 950 ₽.">
+          <span class="row__n">Строительство домов, Москва</span><span class="row__k">90 250 ₽ в рекламу</span><span class="row__r">95 заявок по 950 ₽</span>
+        </li>
+        <li class="row" tabindex="0" data-r data-big="80 заявок" data-txt="за первый месяц. В рекламу вложено 34 800 ₽, заявка вышла по 435 ₽.">
+          <span class="row__n">Детейлинг, Санкт-Петербург</span><span class="row__k">34 800 ₽ в рекламу</span><span class="row__r">80 заявок по 435 ₽</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTO BAND ============ -->
+<figure class="band" id="band" data-field="carmine">
+  <img src="img/skyline.jpg" width="1920" height="1080" alt="Город на закате, вид сверху на набережную и кварталы" loading="lazy">
+</figure>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing f-paper" id="pricing" data-field="paper">
+  <div class="wrap">
+    <div class="ptable" id="ptable">
+      <div class="ptable__corner"><h2 class="h2" data-r="line">Услуги и цены</h2></div>
+      <div class="ptable__labels" aria-hidden="true">
+        <div class="pl pl--price">Стоимость</div>
+        <div class="pl">Что делаю</div>
+        <div class="pl">Кому подходит</div>
+        <div class="pl">Результат</div>
+        <div class="pl pl--act"></div>
+      </div>
+
+      <article class="plan plan--main" data-r>
+        <h3 class="plan__name">Яндекс Директ</h3>
+        <div class="cell cell--price" data-label="Стоимость"><p class="price">40–65 тыс. ₽</p><p class="price__sub">до 170 тыс. ₽ на объёмных проектах. Рекламный бюджет оплачивается отдельно.</p></div>
+        <div class="cell" data-label="Что делаю"><p>Стратегия, кампании, объявления, аналитика ключевых показателей.</p></div>
+        <div class="cell" data-label="Кому подходит"><p>Бизнесу, которому нужен управляемый поток заявок из поиска и сетей.</p></div>
+        <div class="cell" data-label="Результат"><p>Заявки с рекламы и понятная отчётность: сколько пришло и по какой цене.</p></div>
+        <div class="cell cell--act"><a class="btn btn--block" href="#lead" data-service="Яндекс Директ">Обсудить Директ</a></div>
+      </article>
+
+      <article class="plan" data-r>
+        <h3 class="plan__name">Карты</h3>
+        <div class="cell cell--price" data-label="Стоимость"><p class="price">30–50 тыс. ₽</p><p class="price__sub">Яндекс Карты, 2ГИС, Zoon и другие площадки.</p></div>
+        <div class="cell" data-label="Что делаю"><p>Продвигаю карточки компании на картах и справочниках.</p></div>
+        <div class="cell" data-label="Кому подходит"><p>Бизнесу, который ищут рядом: салоны, студии, сервисы, магазины.</p></div>
+        <div class="cell" data-label="Результат"><p>Звонки и обращения от людей, которые ищут вас на картах.</p></div>
+        <div class="cell cell--act"><a class="btn btn--block" href="#lead" data-service="Карты">Обсудить карты</a></div>
+      </article>
+
+      <article class="plan" data-r>
+        <h3 class="plan__name">Сайты</h3>
+        <div class="cell cell--price" data-label="Стоимость"><p class="price">40–70 тыс. ₽</p><p class="price__sub">лендинг. Многостраничный сайт от 150 тыс. ₽.</p></div>
+        <div class="cell" data-label="Что делаю"><p>Делаю лендинг или многостраничный сайт под рекламный трафик.</p></div>
+        <div class="cell" data-label="Кому подходит"><p>Тем, у кого нет страницы под рекламу или она не приводит заявки.</p></div>
+        <div class="cell" data-label="Результат"><p>Страница, на которой клик превращается в обращение.</p></div>
+        <div class="cell cell--act"><a class="btn btn--block" href="#lead" data-service="Сайт">Обсудить сайт</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEPS ============ -->
+<section class="steps f-carmine" id="steps" data-field="carmine">
+  <div class="wrap">
+    <ol class="stairs">
+      <li class="stage" style="--i:0">
+        <h2 class="stage__t"><span class="mask"><span>Сначала разбираю, что есть.</span></span></h2>
+        <p class="stage__p" data-r>Анализ текущего продвижения и каналов привлечения. На разбор уходит 30 минут.</p>
+      </li>
+      <li class="stage" style="--i:1">
+        <p class="stage__t"><span class="mask"><span>Потом считаю назад.</span></span></p>
+        <p class="stage__p" data-r>Из нужного числа клиентов в заявки, из заявок в бюджет. Стратегия с учётом вашей специфики.</p>
+      </li>
+      <li class="stage" style="--i:2">
+        <p class="stage__t"><span class="mask"><span>Запускаю рекламу.</span></span></p>
+        <p class="stage__p" data-r>Директ, карты и страница, на которую приходит клиент. Всё, что ведёт к заявке.</p>
+      </li>
+      <li class="stage stage--last" style="--i:3">
+        <p class="stage__t"><span class="mask"><span>Дальше смотрим цифры.</span></span></p>
+        <p class="stage__p" data-r>Аналитика ключевых показателей и регулярная отчётность.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about f-paper" id="about" data-field="paper">
+  <div class="wrap about__grid">
+    <div class="about__text">
+      <h2 class="h2" data-r="line">Павел Демин</h2>
+      <p class="about__p" data-r>Маркетолог-стратег, специалист по платному трафику. Строю поток целевых заявок из Яндекс Директа: от 5 до 150 в день.</p>
+      <div class="about__nums">
+        <p class="num" data-r><b class="num__v">2012</b><span>год, с которого запускаю платную рекламу</span></p>
+        <p class="num" data-r><b class="num__v"><i data-count="85">85</i>+</b><span>ниш, в которых реклама приводила заявки</span></p>
+      </div>
+    </div>
+    <figure class="about__ph" data-r="open">
+      <img src="img/pavel.jpg" width="499" height="500" alt="Павел Демин, маркетолог-стратег, специалист по платному трафику" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq f-tone" id="faq" data-field="tone">
+  <div class="wrap faq__grid">
+    <div class="faq__head">
+      <h2 class="h2" data-r="line">Частые вопросы</h2>
+      <figure class="faq__ph" data-r="open">
+        <img src="img/alley.jpg" width="1400" height="1000" alt="Узкая улица между стен охристого и терракотового цвета" loading="lazy">
+      </figure>
+    </div>
+    <div class="faq__list" data-stagger>
+      <details data-r>
+        <summary>Сколько стоит настройка?</summary>
+        <div class="ans"><p>Яндекс Директ: 40–65 тыс. ₽, на объёмных проектах до 170 тыс. ₽. Карты: 30–50 тыс. ₽. Лендинг: 40–70 тыс. ₽, многостраничный сайт: от 150 тыс. ₽. Рекламный бюджет оплачивается отдельно.</p></div>
+      </details>
+      <details data-r>
+        <summary>Сколько нужно вкладывать в рекламу?</summary>
+        <div class="ans"><p>Зависит от ниши и от того, сколько клиентов вам нужно. В моих кейсах первый месяц стоил от 34 800 до 254 500 ₽. Прикиньте свой вариант в калькуляторе выше, а на разборе уточним по вашей нише.</p></div>
+      </details>
+      <details data-r>
+        <summary>Вы работаете с моей нишей?</summary>
+        <div class="ans"><p>Запускал рекламу в 85 нишах. Если вашей среди них нет, на разборе покажу, как посчитать заявку и бюджет, и скажу прямо, если реклама не окупится.</p></div>
+      </details>
+      <details data-r>
+        <summary>Нужен ли мне сайт?</summary>
+        <div class="ans"><p>Реклама ведёт на страницу, и от неё зависит число заявок. Если страница слабая, сделаю лендинг под рекламу. Если сайт хороший, подключу аналитику и работаю с ним.</p></div>
+      </details>
+      <details data-r>
+        <summary>Как я пойму, что реклама работает?</summary>
+        <div class="ans"><p>Настраиваю аналитику ключевых показателей и присылаю регулярную отчётность: сколько пришло заявок, по какой цене и сколько потрачено.</p></div>
+      </details>
+      <details data-r>
+        <summary>Что будет на разборе?</summary>
+        <div class="ans"><p>За 30 минут разберём, как вы привлекаете клиентов сейчас, и я предложу план роста с цифрами. Разбор бесплатный.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEAD FORM ============ -->
+<section class="lead-sec f-paper" id="lead" data-field="paper">
+  <div class="wrap lead__grid">
+    <div class="lead__text">
+      <h2 class="h2" data-r="line">Разбор за 30 минут</h2>
+      <p class="lead" data-r>Оставьте контакты, и я перезвоню в течение 10 минут. Работаю с понедельника по субботу, с 10 до 21.</p>
+      <p class="lead__note" id="leadNote" hidden></p>
+      <figure class="lead__ph" data-r="open">
+        <img src="img/street.jpg" width="1600" height="1000" alt="Городская улица между кирпичных зданий, вдали стеклянная башня" loading="lazy">
+      </figure>
+    </div>
+    <form class="form" id="leadForm" novalidate>
+      <div class="field">
+        <label for="fName">Как вас зовут</label>
+        <input id="fName" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="fPhone">Телефон</label>
+        <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7" required>
+      </div>
+      <div class="field">
+        <label for="fNiche">Чем занимается бизнес</label>
+        <textarea id="fNiche" name="niche" rows="2" placeholder="Например, натяжные потолки в Казани"></textarea>
+      </div>
+      <input type="hidden" name="service" id="fService" value="">
+      <input type="hidden" name="calc" id="fCalc" value="">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <label class="check"><input type="checkbox" id="fAgree" required><span>Согласен с <a href="privacy.html">политикой конфиденциальности</a></span></label>
+      <button class="btn btn--block" type="submit">Получить разбор</button>
+      <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact f-carmine" id="contact" data-field="carmine">
+  <p class="contact__lead">Проще написать? Отвечаю в Telegram.</p>
+  <h2 class="contact__h"><a class="contact__big" href="https://t.me/dyominp" target="_blank" rel="noopener" aria-label="Написать в Telegram @dyominp"><span class="split2">@dyominp</span></a></h2>
+  <div class="contact__foot">
+    <p>8 (931) 250-06-88<br>Пн–Сб, 10–21</p>
+    <p class="contact__soc">
+      <a href="https://t.me/dyominp" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://t.me/backwarddigital" target="_blank" rel="noopener">Канал</a>
+      <a href="https://vk.com/dyominp" target="_blank" rel="noopener">ВКонтакте</a>
+      <a href="https://vk.com/bw.digital" target="_blank" rel="noopener">Backward Digital</a>
+      <a href="https://www.instagram.com/dyominp" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://dyominp.ru" target="_blank" rel="noopener">dyominp.ru</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer f-paper" data-field="paper">
+  <p class="footer__name" aria-hidden="true">Павел Демин</p>
+  <div class="footer__row">
+    <p>© <span id="year">2026</span> Павел Демин. Backward Digital.</p>
+    <p><a href="privacy.html">Политика конфиденциальности</a></p>
+    <p class="footer__credit">Фото городов: Kevin Young, Matthew Wiebe, Afroz Nawaf, Unsplash, через Lorem Picsum.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
