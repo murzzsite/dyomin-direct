@@ -306,10 +306,10 @@ section { scroll-margin-top: 0; }
 
 /* ===== Pains ===== */
 .pains { padding-block: var(--gap); }
-.pains__lead { margin-top: 28px; }
 .pains__list { margin-top: clamp(48px, 7vw, 96px); }
 .pain { display: block; padding-block: 0.1em; font-family: var(--f-display); font-weight: 800; font-size: clamp(2.5rem, 5.4vw, 6.25rem); line-height: 1; text-transform: uppercase; letter-spacing: -0.005em; }
-.pain__t { position: relative; display: inline-block; }
+.pain::before { content: "•"; display: inline-block; width: 0.55em; color: var(--carmine-text); }
+.pain__t { position: relative; display: inline-block; vertical-align: top; max-width: calc(100% - 0.6em); }
 .nb { white-space: nowrap; }
 .pain__t::after { content: ""; position: absolute; left: -0.03em; right: -0.03em; top: 54%; height: 0.1em; background: var(--carmine); transform: scaleX(0); transform-origin: left center; }
 .js .pain { opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--ease-expo), transform 0.8s var(--ease-expo); }
@@ -351,7 +351,7 @@ section { scroll-margin-top: 0; }
 
 /* ===== Photo band ===== */
 .band { position: relative; height: clamp(320px, 72svh, 780px); overflow: hidden; background: var(--tone); }
-.band img { position: absolute; left: 0; top: -14%; width: 100%; height: 128%; object-fit: cover; transform: translate3d(0, var(--by, 0px), 0) scale(var(--bs, 1.08)); will-change: transform; }
+.band img { position: absolute; left: 0; top: 0; width: 100%; height: 118%; object-fit: cover; object-position: 50% 0%; transform: translate3d(0, var(--by, 0px), 0) scale(var(--bs, 1)); will-change: transform; }
 
 /* ===== Pricing ===== */
 .pricing { padding-block: var(--gap); }
@@ -403,7 +403,7 @@ section { scroll-margin-top: 0; }
 .faq__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 16px; align-items: start; }
 .faq__head { grid-column: 1 / span 4; display: grid; gap: 40px; position: sticky; top: 112px; }
 .faq__ph { overflow: hidden; background: var(--paper); }
-.faq__ph img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.faq__ph img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0%; }
 .faq__list { grid-column: 6 / span 7; display: grid; gap: 12px; }
 .faq details { margin-inline: -24px; padding-inline: 24px; background: transparent; transition: background-color var(--t-field) ease; }
 .faq details[open] { background: var(--paper); }

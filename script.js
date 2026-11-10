@@ -94,8 +94,8 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/TTX55BZ3XZ'
         const r = band.getBoundingClientRect();
         if (r.bottom > 0 && r.top < vh) {
           const p = clamp((vh - r.top) / (vh + r.height), 0, 1);
-          bandImg.style.setProperty('--by', ((p - 0.5) * r.height * 0.24).toFixed(1) + 'px');
-          bandImg.style.setProperty('--bs', (1.04 + p * 0.08).toFixed(3));
+          bandImg.style.setProperty('--by', (-p * r.height * 0.15).toFixed(1) + 'px');
+          bandImg.style.setProperty('--bs', '1');
         }
       }
       vel = vel * 0.8 + (y - lastY) * 0.2;
