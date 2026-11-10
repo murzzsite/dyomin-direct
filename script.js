@@ -283,6 +283,21 @@ const LEAD_ENDPOINT = 'https://lead-relay.leestygpt.workers.dev/lead/TTX55BZ3XZ'
       renderNote();
     }));
 
+    // ===== Footer: tagline fitted to the width of the name =====
+    const fName = $('.footer__name');
+    const fTag = $('#footerTag');
+    const fit = () => {
+      const w = el => { const r = document.createRange(); r.selectNodeContents(el); return r.getBoundingClientRect().width; };
+      fTag.style.fontSize = '';
+      const k = w(fName) / w(fTag);
+      if (isFinite(k) && k > 0) fTag.style.fontSize = (parseFloat(getComputedStyle(fTag).fontSize) * k).toFixed(1) + 'px';
+    };
+    if (fName && fTag) {
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+      window.addEventListener('resize', fit);
+      fit();
+    }
+
     // ===== Phone mask =====
     $$('input[type="tel"]').forEach(input => {
       input.addEventListener('input', e => {
